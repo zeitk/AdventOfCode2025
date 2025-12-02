@@ -3,14 +3,12 @@
     public abstract class Day
     {
         protected string[] Lines;
-        protected int Part;
 
-        public Day(int Day, int Part)
+        public Day(int Day)
         {
             this.Lines = Utils.Utils.GetInput(Day);
-            this.Part = Part;
         }
 
-        public abstract void Solve();
+        public abstract void Solve(int Part);
     }
 }

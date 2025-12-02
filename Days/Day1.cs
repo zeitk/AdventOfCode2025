@@ -4,13 +4,13 @@ namespace AdventOfCode2025.Days
 {
     public class Day1 : Day
     {
-        public Day1(int Part)
-            : base(1, Part) 
+        public Day1()
+            : base(1) 
         {}
 
-        public override void Solve()
+        public override void Solve(int Part)
         {
-            if (this.Part == 1)
+            if (Part == 1)
             {
                 Part1();
             }
