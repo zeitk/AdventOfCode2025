@@ -1,0 +1,12 @@
+# Ignore everything
+*
+
+# But do not ignore directories so Git can recurse into them
+!*/
+
+# Keep .gitignore tracked
+!.gitignore
+
+# Ignore build artifacts folders even if .cs/.txt are allowed
+bin/
+obj/
