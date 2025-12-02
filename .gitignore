@@ -1,12 +1,16 @@
-# Ignore everything
-*
+# Ignore everything at the repository root
+/*
 
 # But do not ignore directories so Git can recurse into them
 !*/
 
+# Allow .cs and .txt files anywhere (recursive)
+!/**/*.cs
+!/**/*.txt
+
 # Keep .gitignore tracked
 !.gitignore
 
-# Ignore build artifacts folders even if .cs/.txt are allowed
-bin/
-obj/
+# Ignore build artifacts folders
+/bin/
+/obj/
