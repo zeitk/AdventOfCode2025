@@ -55,7 +55,6 @@ namespace AdventOfCode2025.Days
             {
                 // Store positions of battery joltages
                 var positions = new Dictionary<int, List<int>>();
-                var latest = new Dictionary<int, int>();
                 for (int i = 0; i < batteryPack.Length; i++)
                 {
                     var battery = int.Parse(batteryPack[i].ToString());
@@ -67,12 +66,10 @@ namespace AdventOfCode2025.Days
                     {
                         positions[battery] = new List<int>() { i };
                     }
-
-                    latest[battery] = i;
                 }
 
                 // Find the largest possible number
-                var largest = this.FindLargestViaDFS(positions, latest, new StringBuilder(), -1);
+                var largest = this.FindLargestViaDFS(positions, new StringBuilder(), -1);
                 sum += largest;
             }
 
@@ -98,7 +95,7 @@ namespace AdventOfCode2025.Days
             return 0;
         }
 
-        private double FindLargestViaDFS(Dictionary<int, List<int>> positions, Dictionary<int, int> latest, StringBuilder sb, int previousPosition)
+        private double FindLargestViaDFS(Dictionary<int, List<int>> positions, StringBuilder sb, int previousPosition)
         {
             if (sb.Length == 12)
             {
@@ -107,15 +104,15 @@ namespace AdventOfCode2025.Days
 
             for (int i = 9; i >= 0; i--)
             {
-                if (latest.TryGetValue(i, out var lastPosition) && lastPosition > previousPosition)
+                if (positions.TryGetValue(i, out var positionsList) && positionsList.Last() > previousPosition)
                 {
-                    for (int j = 0; j < positions[i].Count; j++)
+                    for (int j = 0; j < positionsList.Count; j++)
                     {
-                        var currentPosition = positions[i][j];
+                        var currentPosition = positionsList[j];
                         if (currentPosition > previousPosition)
                         {
                             sb.Append(i);
-                            var value = this.FindLargestViaDFS(positions, latest, sb, currentPosition);
+                            var value = this.FindLargestViaDFS(positions, sb, currentPosition);
 
                             if (value == -1)
                             {
