@@ -2,11 +2,11 @@
 {
     public abstract class Day
     {
-        protected string[] Lines;
+        protected string[] Input;
 
         public Day(int Day)
         {
-            this.Lines = Utils.Utils.GetInput(Day);
+            this.Input = Utils.Utils.GetInput(Day);
         }
 
         public abstract void Solve(int Part);

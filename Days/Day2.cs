@@ -23,7 +23,7 @@ namespace AdventOfCode2025.Days
         private void Part1()
         {
             double sum = 0;
-            var ids = this.Lines[0].Split(',');
+            var ids = this.Input[0].Split(',');
             foreach (var id in ids)
             {
                 var digits = id.Split('-');
@@ -66,7 +66,7 @@ namespace AdventOfCode2025.Days
             double largest = 0;
             var ranges = new Dictionary<double, double>();
             var found = new HashSet<double>();
-            var ids = this.Lines[0].Split(',');
+            var ids = this.Input[0].Split(',');
 
             foreach (var id in ids)
             {

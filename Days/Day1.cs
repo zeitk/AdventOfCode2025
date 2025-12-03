@@ -24,7 +24,7 @@ namespace AdventOfCode2025.Days
         {
             var numZeros = 0;
             var position = 50;
-            foreach (var line in Lines)
+            foreach (var line in Input)
             {
                 var dir = line[0] == 'L' ? -1 : 1;
                 var dist = int.Parse(line.Substring(1));
@@ -45,7 +45,7 @@ namespace AdventOfCode2025.Days
         {
             var numZeros = 0;
             var position = 50;
-            foreach (var line in Lines)
+            foreach (var line in Input)
             {
                 var dir = line[0] == 'L' ? -1 : 1;
                 var dist = int.Parse(line.Substring(1));
