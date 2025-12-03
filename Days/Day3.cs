@@ -106,9 +106,8 @@ namespace AdventOfCode2025.Days
             {
                 if (positions.TryGetValue(i, out var positionsList) && positionsList.Last() > previousPosition)
                 {
-                    for (int j = 0; j < positionsList.Count; j++)
+                    foreach (var currentPosition in positionsList)
                     {
-                        var currentPosition = positionsList[j];
                         if (currentPosition > previousPosition)
                         {
                             sb.Append(i);
