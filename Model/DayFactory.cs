@@ -16,6 +16,8 @@ namespace AdventOfCode2025.Model
                     return new Day3();
                 case 4:
                     return new Day4();
+                case 5:
+                    return new Day5();
                 default:
                     throw new Exception($"Day {Day} not implement yet!");
             }
